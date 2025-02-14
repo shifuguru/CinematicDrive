@@ -197,11 +197,21 @@ namespace CinematicDrive
 
         private void DriveToWaypoint()
         {
+            if (Game.IsControlJustReleased(Control.VehicleExit))
+            {
+                if (SettingsManager.EndOnExitEnabled)
+                {
+                    Game.Player.Character.Task.ClearAll();
+                    Global.IsActive = false;
+                    Global.IsCruising = false;
+                    return;
+                }
+            }
             if (!Global.IsActive && waypointActive)
             {
                 if (Game.Player.Character.IsInVehicle() && Game.Player.Character.CurrentVehicle != null && Game.Player.Character.CurrentVehicle.Exists())
                     Game.Player.Character.Task.DriveTo(Game.Player.Character.CurrentVehicle, currentDestination, 30f, SettingsManager.Speed, SettingsManager.DrivingStyle);
-                if (Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
+                if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
                     Game.Player.Character.Task.GoTo(currentDestination, 15000);
             }
             else
@@ -213,11 +223,21 @@ namespace CinematicDrive
 
         private void Cruise()
         {
+            if (Game.IsControlJustReleased(Control.VehicleExit))
+            {
+                if (SettingsManager.EndOnExitEnabled)
+                {
+                    Game.Player.Character.Task.ClearAll();
+                    Global.IsActive = false;
+                    Global.IsCruising = false;
+                    return;
+                }
+            }
             if (!Global.IsActive && !waypointActive)
             {
                 if (Game.Player.Character.IsInVehicle() && Game.Player.Character.CurrentVehicle != null && Game.Player.Character.CurrentVehicle.Exists())
                     Game.Player.Character.Task.CruiseWithVehicle(Game.Player.Character.CurrentVehicle, SettingsManager.Speed, SettingsManager.DrivingStyle);
-                if (Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
+                if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
                     Game.Player.Character.Task.WanderAround();
             }
             else

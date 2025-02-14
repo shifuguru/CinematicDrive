@@ -57,13 +57,13 @@ namespace CinematicDrive
             menu.Add(debugEnabledToggle);
             debugEnabledToggle.CheckboxChanged += ToggleDebug;
 
-            menu.Add(speedItem);
-            speedItem.ValueChanged += ChangeDriveSpeed;
-            speedItem.Value = SettingsManager.Speed;
+            // menu.Add(speedItem);
+            // speedItem.ValueChanged += ChangeDriveSpeed;
+            // speedItem.Value = SettingsManager.Speed;
 
-            menu.Add(drivingStyleItem);
+            // menu.Add(drivingStyleItem);
             // drivingStyleItem.ItemChanged += ChangeDrivingStyle;
-            drivingStyleItem.SelectedIndex = styles.IndexOf(SettingsManager.GetDrivingStyleName());
+            // drivingStyleItem.SelectedIndex = styles.IndexOf(SettingsManager.GetDrivingStyleName());
         }
         
         public static void ToggleMenu()

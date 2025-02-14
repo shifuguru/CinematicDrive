@@ -7,6 +7,8 @@ namespace CinematicDrive
     {
         public static bool ModEnabled { get; private set; } = true;
         public static bool DebugEnabled { get; private set; } = false; // Set to FALSE before Public Release!!!
+        public static bool OnFootEnabled { get; private set; } = false; // Currently not implemented well.
+        public static bool EndOnExitEnabled { get; private set; } = true; // End Cinematic on Vehicle Exit
         public static int HoldDurationMs { get; private set; } = 1000;
         public static int Speed { get; private set; } = 20;
         public static DrivingStyle DrivingStyle { get; private set; } = DrivingStyle.Normal;
@@ -21,6 +23,8 @@ namespace CinematicDrive
             Speed = config.GetValue("SETTINGS", "Speed", 20);
             DrivingStyle = config.GetValue("SETTINGS", "Driving Style", DrivingStyle.Normal);
             MenuKey = config.GetValue("SETTINGS", "MenuKey", Keys.F5);
+            OnFootEnabled = config.GetValue("SETTINGS", "On Foot Enabled", false);
+            EndOnExitEnabled = config.GetValue("SETTINGS", "End On Exit Enabled", false);
 
             string drivingStyleName = config.GetValue("SETTINGS", "Driving Style", "Normal");
             SetDrivingStyleFromName(drivingStyleName);
@@ -37,6 +41,8 @@ namespace CinematicDrive
             config.SetValue("SETTINGS", "Speed", Speed);
             config.SetValue("SETTINGS", "DrivingStyle", GetDrivingStyleName());
             config.SetValue("SETTINGS", "MenuKey", MenuKey);
+            config.SetValue("SETTINGS", "On Foot Enabled", OnFootEnabled);
+            config.SetValue("SETTINGS", "End On Exit Enabled", EndOnExitEnabled);
 
             config.Save();
         }
@@ -44,6 +50,9 @@ namespace CinematicDrive
 
         public static void SetModEnabled(bool isEnabled) => ModEnabled = isEnabled;
         public static void SetDebugEnabled(bool isEnabled) => DebugEnabled = isEnabled;
+        public static void SetOnFootEnabled(bool isEnabled) => OnFootEnabled = isEnabled;
+        public static void SetEndOnExitEnabled(bool isEnabled) => EndOnExitEnabled = isEnabled;
+
         public static void SetHoldDuration(int holdDuration) => HoldDurationMs = holdDuration;
         public static void SetSpeed(int speed) => Speed = speed;
         public static void SetDrivingStyleFromName(string styleName)
