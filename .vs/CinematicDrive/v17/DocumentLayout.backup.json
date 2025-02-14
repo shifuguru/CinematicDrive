@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\cinematicbars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:cinematicbars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 466,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LemonMenu.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
+              "RelativeDocumentMoniker": "LemonMenu.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
+              "RelativeToolTip": "LemonMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:33:08.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Global.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Global.cs",
+              "RelativeDocumentMoniker": "Global.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Global.cs",
+              "RelativeToolTip": "Global.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:32:34.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingsManager.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
+              "RelativeDocumentMoniker": "SettingsManager.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
+              "RelativeToolTip": "SettingsManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:28:34.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CinematicBars.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
+              "RelativeDocumentMoniker": "CinematicBars.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
+              "RelativeToolTip": "CinematicBars.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:21:46.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
+              "RelativeToolTip": "Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:04:52.088Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

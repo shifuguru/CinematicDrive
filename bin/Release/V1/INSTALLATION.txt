@@ -1,0 +1,19 @@
+📂 Installation:
+
+- Ensure you have installed the requirements.
+- Copy or move the .dll file to your scripts folder. 
+
+
+
+✅ Requirements:
+
+ScriptHookVDotNet3:
+https://github.com/scripthookvdotnet/scripthookvdotnet/releases
+- Nightly (flickering):
+https://github.com/scripthookvdotnet/scripthookvdotnet-nightly/releases
+
+iFruitAddon2:
+https://github.com/Bob74/iFruitAddon2/releases
+
+LemonUI:
+https://github.com/LemonUIbyLemon/LemonUI?tab=readme-ov-file#readme

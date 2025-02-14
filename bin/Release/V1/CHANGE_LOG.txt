@@ -1,0 +1,7 @@
+🆕 Version 1.0 Changelog
+✅ Rewritten from scratch for improved stability & performance
+✅ Upgraded to work with LemonUI, iFruitAddon2, and SHVDN3
+✅ Improved Cinematic Black Bar Transitions
+✅ Refined Driving Logic for smoother Auto-Drive & Free Cruise Mode
+✅ New Menu System for Customization
+✅ Better Performance & Resolution Scaling

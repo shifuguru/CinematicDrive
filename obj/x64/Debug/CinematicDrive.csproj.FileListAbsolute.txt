@@ -1,0 +1,12 @@
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\CinematicDrive.dll
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\CinematicDrive.pdb
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\iFruitAddon2.dll
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\LemonUI.SHVDN3.dll
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\ScriptHookVDotNet3.dll
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\LemonUI.SHVDN3.xml
+F:\GTA5 scripts\Projects\CinematicDrive\bin\x64\Debug\ScriptHookVDotNet3.xml
+F:\GTA5 scripts\Projects\CinematicDrive\obj\x64\Debug\CinematicDrive.csproj.AssemblyReference.cache
+F:\GTA5 scripts\Projects\CinematicDrive\obj\x64\Debug\CinematicDrive.csproj.CoreCompileInputs.cache
+F:\GTA5 scripts\Projects\CinematicDrive\obj\x64\Debug\Cinemati.EB4DB0AD.Up2Date
+F:\GTA5 scripts\Projects\CinematicDrive\obj\x64\Debug\CinematicDrive.dll
+F:\GTA5 scripts\Projects\CinematicDrive\obj\x64\Debug\CinematicDrive.pdb
