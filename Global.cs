@@ -10,6 +10,7 @@ namespace CinematicDrive
         public static bool IsActive { get; set; }
 
         public static bool IsCruising { get; set; }
+        public static bool IsOnFoot { get; set; }
 
         public static bool IsDriving { get; set; }
 

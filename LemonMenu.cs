@@ -11,11 +11,12 @@ namespace CinematicDrive
     public class LemonMenu : Script
     {
         public static readonly ObjectPool pool = new ObjectPool();
-        private static readonly NativeMenu menu = new NativeMenu("Cinematic Drive", "Settings");
+        public static readonly NativeMenu menu = new NativeMenu("Cinematic Drive", "Settings");
 
-        private static readonly NativeCheckboxItem modEnabledToggle = new NativeCheckboxItem("Mod Enabled: ", SettingsManager.ModEnabled);
-        private static readonly NativeCheckboxItem debugEnabledToggle = new NativeCheckboxItem("Debug Enabled:", SettingsManager.DebugEnabled);
-        private static readonly NativeSliderItem speedItem = new NativeSliderItem("Speed: ", "", 250, SettingsManager.Speed);
+        private static readonly NativeCheckboxItem ModEnabledToggle = new NativeCheckboxItem("Mod Enabled: ", SettingsManager.ModEnabled);
+        private static readonly NativeCheckboxItem DebugEnabledToggle = new NativeCheckboxItem("Debug Enabled:", SettingsManager.DebugEnabled);
+        private static readonly NativeDynamicItem<int> SpeedItem = new NativeDynamicItem<int>("Speed: ", "Sets the maximum Travel Speed", SettingsManager.Speed);
+        private static readonly NativeDynamicItem<string> DrivingStyleItem = new NativeDynamicItem<string>("Driving Style: ", SettingsManager.GetDrivingStyleName());
 
         public static List<object> airports = new List<object>()
         {
@@ -24,7 +25,7 @@ namespace CinematicDrive
             "McKenzie Airport"
         };
 
-        private static readonly List<object> styles = new List<object>()
+        private static readonly List<string> styles = new List<string>()
         {
             "Avoid Traffic",
             "Avoid Traffic Extremely",
@@ -34,7 +35,7 @@ namespace CinematicDrive
             "Sometimes Overtake Traffic"
         };
 
-        private static readonly NativeListItem<object> drivingStyleItem = new NativeListItem<object>("Driving Style: ", "styles");
+        
 
         public LemonMenu()
         {
@@ -52,18 +53,18 @@ namespace CinematicDrive
         {
             pool.Add(menu);
             // Add items to the menu:
-            menu.Add(modEnabledToggle);
-            modEnabledToggle.CheckboxChanged += ToggleMod;
-            menu.Add(debugEnabledToggle);
-            debugEnabledToggle.CheckboxChanged += ToggleDebug;
+            menu.Add(ModEnabledToggle);
+            ModEnabledToggle.CheckboxChanged += ToggleMod;
+            menu.Add(DebugEnabledToggle);
+            DebugEnabledToggle.CheckboxChanged += ToggleDebug;
 
-            // menu.Add(speedItem);
-            // speedItem.ValueChanged += ChangeDriveSpeed;
-            // speedItem.Value = SettingsManager.Speed;
+            menu.Add(SpeedItem);
+            SpeedItem.ItemChanged += ChangeDriveSpeed;
+            SpeedItem.SelectedItem = SettingsManager.Speed;
 
-            // menu.Add(drivingStyleItem);
-            // drivingStyleItem.ItemChanged += ChangeDrivingStyle;
-            // drivingStyleItem.SelectedIndex = styles.IndexOf(SettingsManager.GetDrivingStyleName());
+            menu.Add(DrivingStyleItem);
+            DrivingStyleItem.ItemChanged += ChangeDrivingStyle;
+            DrivingStyleItem.SelectedItem = SettingsManager.GetDrivingStyleName();
         }
         
         public static void ToggleMenu()
@@ -73,48 +74,51 @@ namespace CinematicDrive
 
         private static void ToggleMod(object sender, EventArgs e)
         {
-            SettingsManager.SetModEnabled(modEnabledToggle.Checked);
+            SettingsManager.SetModEnabled(ModEnabledToggle.Checked);
             Screen.ShowSubtitle($"Cinematic Drive Enabled: {SettingsManager.ModEnabled}", 1500);
             SettingsManager.Save();
         }
 
         private static void ToggleDebug(object sender, EventArgs e)
         {
-            SettingsManager.SetDebugEnabled(debugEnabledToggle.Checked);
+            SettingsManager.SetDebugEnabled(DebugEnabledToggle.Checked);
             Screen.ShowSubtitle($"Debug Enabled: {SettingsManager.DebugEnabled}", 1500);
             SettingsManager.Save();
         }
 
 
         //* Come back to this once Lemon has explained how it works:
-        private static void ChangeDriveSpeed(object sender, ItemChangedEventArgs<object> e)
+        private static void ChangeDriveSpeed(object sender, ItemChangedEventArgs<int> e)
         {
-            if (e.Direction == Direction.Left)
-            {
-                SettingsManager.SetSpeed(SettingsManager.Speed - 1);
-            }
-            else if (e.Direction == Direction.Right)
-            {
-                SettingsManager.SetSpeed(SettingsManager.Speed + 1);
-            }
-        }
+            int max = 250;
+            int min = 0;
 
-        private static void ChangeDrivingStyle(NativeListItem<object> nativeListItem, ItemChangedEventArgs<object> e)
-        {
-            if (nativeListItem.SelectedItem is string selectedStyle)
-            {
-                SettingsManager.SetDrivingStyleFromName(selectedStyle);
-                Screen.ShowSubtitle($"Driving Style Set: {selectedStyle}", 1500);
-                SettingsManager.Save();
-            }
-        }
-        //
+            int increment = e.Direction == Direction.Left ? -1 : 1;
 
-        private static void ChangeSpeed(object sender, EventArgs e)
-        {
-            SettingsManager.SetSpeed(speedItem.Value);
-            Screen.ShowSubtitle($"Speed Set: {SettingsManager.Speed}", 1500);
+            e.Object = (e.Object + increment - min + (max - min + 1)) % (max - min + 1) + min;
+            SettingsManager.SetSpeed(e.Object);
+            Screen.ShowSubtitle($"Driving Speed Set: {e.Object}", 1500);
             SettingsManager.Save();
+        }
+
+        private static void ChangeDrivingStyle(object sender, ItemChangedEventArgs<string> e)
+        {
+            int currentIndex = styles.IndexOf(DrivingStyleItem.SelectedItem);
+
+            if (currentIndex == -1) 
+                return;
+
+            int increment = e.Direction == Direction.Left? -1 : 1;
+            int newIndex = (currentIndex + increment + styles.Count) % styles.Count;
+            string selectedStyle = styles[newIndex];
+
+            Screen.ShowSubtitle($"DEBUG: e.Object={e.Object}, SelectedItem={DrivingStyleItem.SelectedItem}, currentIndex={currentIndex}, newIndex={newIndex}", 2500);
+
+            SettingsManager.SetDrivingStyleFromName(selectedStyle);
+            // Screen.ShowSubtitle($"Driving Style Set: Index: {newIndex} - {selectedStyle}", 1500);
+            SettingsManager.Save();
+
+            DrivingStyleItem.SelectedItem = selectedStyle;
         }
 
         public static void CreateMenu()

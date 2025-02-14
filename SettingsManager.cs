@@ -6,10 +6,10 @@ namespace CinematicDrive
     public class SettingsManager
     {
         public static bool ModEnabled { get; private set; } = true;
-        public static bool DebugEnabled { get; private set; } = false; // Set to FALSE before Public Release!!!
+        public static bool DebugEnabled { get; private set; } = true; // Set to FALSE before Public Release!!!
         public static bool OnFootEnabled { get; private set; } = false; // Currently not implemented well.
         public static bool EndOnExitEnabled { get; private set; } = true; // End Cinematic on Vehicle Exit
-        public static int HoldDurationMs { get; private set; } = 1000;
+        public static int HoldDurationMs { get; private set; } = 3000;
         public static int Speed { get; private set; } = 20;
         public static DrivingStyle DrivingStyle { get; private set; } = DrivingStyle.Normal;
         public static Keys MenuKey { get; private set; } = Keys.F5;
@@ -68,6 +68,9 @@ namespace CinematicDrive
                 case "Ignore Lights":
                     DrivingStyle = DrivingStyle.IgnoreLights;
                     break;
+                case "Normal":
+                    DrivingStyle = DrivingStyle.Normal;
+                    break;
                 case "Rushed":
                     DrivingStyle = DrivingStyle.Rushed;
                     break;
@@ -90,6 +93,8 @@ namespace CinematicDrive
                     return "Avoid Traffic Extermely";
                 case DrivingStyle.IgnoreLights:
                     return "Ignore Lights";
+                case DrivingStyle.Normal:
+                    return "Normal";
                 case DrivingStyle.Rushed:
                     return  "Rushed";
                 case DrivingStyle.SometimesOvertakeTraffic:

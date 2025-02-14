@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="CinematicBars.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="iFruitAddon.cs" />
     <Compile Include="LemonMenu.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,24 +26,6 @@ namespace CinematicDrive
             }
         }
 
-        public void Show()
-        {
-            for (int i = 0; i <= 100; i += 2)
-            {
-                IncreaseY(2);
-                Script.Wait(10);
-            }
-        }
-
-        public void Hide()
-        {
-            for (int i = 100; i >= 0; i -= 2)
-            {
-                DecreaseY(2);
-                Script.Wait(10);
-            }
-        }
-
         public void IncreaseY(int i)
         {
             if ((double)cinematicBars[0].Position.Y >= 0.0)

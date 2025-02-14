@@ -13,9 +13,9 @@ namespace CinematicDrive
     public class Main : Script
     {
         private bool firstTime = true;
-        private const string ModName = "Cinematic Drive";
+        public const string ModName = "Cinematic Drive";
         private const string Developer = "Shifuguru";
-        private const string Version = "1.0";
+        private const string Version = "1.1";
 
         private CinematicBars cinematicBars;
         private Stopwatch holdStopwatch = new Stopwatch();
@@ -43,9 +43,8 @@ namespace CinematicDrive
             #region WAYPOINT: 
             bool objectiveWaypointActive = false;
             waypointActive = Game.IsWaypointActive || objectiveWaypointActive;
-            // Check if Player waypoint is active. Old code, have yet to test if Blip[] also includes player waypoint 
             Blip[] ActiveBlips = World.GetAllBlips();
-            
+
             if (Game.IsWaypointActive)
             {
                 currentDestination = World.WaypointPosition;
@@ -68,10 +67,13 @@ namespace CinematicDrive
                     }
                 }
             }
+
             if (waypointActive)
             {
                 if (SettingsManager.DebugEnabled)
+                {
                     new TextElement(string.Format("X: {0}\nY: {1}\nZ: {2}\n", currentDestination.X, currentDestination.Y, currentDestination.Z), new PointF(0f, 300f), 0.35f, Color.Beige).Draw();
+                }
             }
             #endregion
 
@@ -88,46 +90,71 @@ namespace CinematicDrive
         private void HandleCinematicMode()
         {
             if (Global.ForceCinCam)
+            {
                 Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
-
+            }
             if (Global.IsActive && Game.IsControlPressed(Control.NextCamera))
+            {
                 Global.ForceCinCam = false;
+            }
 
+            // PRESSED COUNTER:
             if (Game.IsControlJustPressed(Control.VehicleCinCam))
+            {
                 ++pressedCounter;
+            }
+
 
             if (Game.IsControlPressed(Control.VehicleCinCam))
             {
                 if (!Global.IsActive)
+                {
                     Global.ForceCinCam2 = false;
+                }
 
                 if (!holdStopwatch.IsRunning)
-                    holdStopwatch.Start();
+                {
+                    holdStopwatch.Start(); // Begin Stopwatch
+                }
 
-                if (holdStopwatch.ElapsedMilliseconds > 1000L && pressedCounter == 1)
+                if (holdStopwatch.ElapsedMilliseconds > SettingsManager.HoldDurationMs && pressedCounter == 1)
                 {
                     Global.ForceCinCam2 = true;
-                    if (Game.Player.Character.CurrentVehicle.Type != VehicleType.Helicopter && Game.Player.Character.CurrentVehicle.Type != VehicleType.Plane)
+
+                    if (Game.Player.Character.CurrentVehicle.Exists() && Game.Player.Character.CurrentVehicle != null)
                     {
-                        if (waypointActive)
-                            DriveToWaypoint();
-                        else
-                            Cruise();
+                        if (Game.Player.Character.CurrentVehicle.Type != VehicleType.Helicopter && Game.Player.Character.CurrentVehicle.Type != VehicleType.Plane)
+                        {
+                            if (waypointActive)
+                            {
+                                DriveToWaypoint();
+                            }
+                            else
+                            {
+                                Cruise();
+                            }
+                        }
                     }
                     else
+                    {
                         Global.IsActive = !Global.IsActive;
+                    }
 
                     holdStopwatch.Stop();
                     holdStopwatch.Reset();
                     pressedCounter = 0;
                 }
 
-                if (holdStopwatch.ElapsedMilliseconds < 1000L && Global.SameHold && pressedCounter == 1)
+                if (holdStopwatch.ElapsedMilliseconds > 500L && holdStopwatch.ElapsedMilliseconds < SettingsManager.HoldDurationMs && Global.SameHold && pressedCounter == 1)
                 {
                     if (Global.IsActive)
+                    {
                         cinematicBars.DecreaseY(2);
+                    }
                     else
+                    {
                         cinematicBars.IncreaseY(2);
+                    }
                 }
 
                 Global.SameHold = true;
@@ -138,9 +165,14 @@ namespace CinematicDrive
                 if (holdStopwatch.ElapsedMilliseconds < 1000L)
                 {
                     if (Global.IsActive)
+                    {
                         cinematicBars.Setup(1);
+                    }
                     else
+                    {
                         cinematicBars.DecreaseY(2);
+                        Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+                    }
                 }
 
                 holdStopwatch.Stop();
@@ -151,7 +183,9 @@ namespace CinematicDrive
             }
 
             if (Game.IsControlJustReleased(Control.VehicleHandbrake) && Game.IsControlJustReleased(Control.VehicleHorn))
+            {
                 LemonMenu.ToggleMenu();
+            }
 
             if (Global.IsDriving && (double)Game.Player.Character.Position.DistanceTo(currentDestination) < 30.0)
             {
@@ -161,7 +195,7 @@ namespace CinematicDrive
 
             if (Global.IsActive)
             {
-                Function.Call(Hash.DISPLAY_RADAR, (InputArgument)false);
+                Function.Call(Hash.DISPLAY_RADAR, false);
                 Global.AlreadyCleared = false;
             }
             else
@@ -173,27 +207,70 @@ namespace CinematicDrive
                 }
 
                 if (!Global.SameHold)
+                {
                     cinematicBars.DecreaseY(2);
+                    // Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+                }
 
                 if (Global.ForceCinCam2)
-                    Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, (InputArgument)false);
+                {
+                    Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+                }
 
-                Function.Call(Hash.DISPLAY_RADAR, (InputArgument)true);
+                Function.Call(Hash.DISPLAY_RADAR, true);
             }
         }
 
 
         private void StartCinematicMode()
         {
-            // 
+            // START:
+            Global.IsActive = true;
+            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
+            //cinematicBars.Show();
         }
 
 
         private void StopCinematicMode()
         {
-            // 
+            // STOP:
+            Global.IsActive = false;
+            Global.IsCruising = false;
+            Global.IsDriving = false;
+            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+            //cinematicBars.Hide();
+            Game.Player.Character.Task.ClearAll();
         }
 
+
+        private void GoToWaypoint()
+        {
+            if (!Global.IsActive && waypointActive)
+            {
+                if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
+                {
+                    Game.Player.Character.Task.GoTo(currentDestination, 15000);
+                }
+            }
+            else
+                Game.Player.Character.Task.ClearAll();
+
+            Global.IsActive = !Global.IsActive;
+            Global.IsOnFoot = !Global.IsOnFoot;
+        }
+        private void WalkAround()
+        {
+            if (!Global.IsActive && !waypointActive)
+            {
+                if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
+                    Game.Player.Character.Task.WanderAround();
+            }
+            else
+                Game.Player.Character.Task.ClearAll();
+
+            Global.IsActive = !Global.IsActive;
+            Global.IsOnFoot = !Global.IsOnFoot;
+        }
 
         private void DriveToWaypoint()
         {
@@ -201,21 +278,21 @@ namespace CinematicDrive
             {
                 if (SettingsManager.EndOnExitEnabled)
                 {
-                    Game.Player.Character.Task.ClearAll();
-                    Global.IsActive = false;
-                    Global.IsCruising = false;
+                    StopCinematicMode();
                     return;
                 }
             }
             if (!Global.IsActive && waypointActive)
             {
                 if (Game.Player.Character.IsInVehicle() && Game.Player.Character.CurrentVehicle != null && Game.Player.Character.CurrentVehicle.Exists())
+                {
                     Game.Player.Character.Task.DriveTo(Game.Player.Character.CurrentVehicle, currentDestination, 30f, SettingsManager.Speed, SettingsManager.DrivingStyle);
-                if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
-                    Game.Player.Character.Task.GoTo(currentDestination, 15000);
+                }
             }
             else
+            {
                 Game.Player.Character.Task.ClearAll();
+            }
 
             Global.IsActive = !Global.IsActive;
             Global.IsDriving = !Global.IsDriving;
@@ -227,21 +304,25 @@ namespace CinematicDrive
             {
                 if (SettingsManager.EndOnExitEnabled)
                 {
-                    Game.Player.Character.Task.ClearAll();
-                    Global.IsActive = false;
-                    Global.IsCruising = false;
+                    StopCinematicMode();
                     return;
                 }
             }
             if (!Global.IsActive && !waypointActive)
             {
                 if (Game.Player.Character.IsInVehicle() && Game.Player.Character.CurrentVehicle != null && Game.Player.Character.CurrentVehicle.Exists())
+                {
                     Game.Player.Character.Task.CruiseWithVehicle(Game.Player.Character.CurrentVehicle, SettingsManager.Speed, SettingsManager.DrivingStyle);
+                }
                 if (SettingsManager.OnFootEnabled && Game.Player.Character.IsOnFoot && !Game.Player.Character.IsInVehicle())
+                {
                     Game.Player.Character.Task.WanderAround();
+                }
             }
             else
+            {
                 Game.Player.Character.Task.ClearAll();
+            }
 
             Global.IsActive = !Global.IsActive;
             Global.IsCruising = !Global.IsCruising;
