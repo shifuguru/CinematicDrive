@@ -5,3 +5,14 @@
 ✅ Refined Driving Logic for smoother Auto-Drive & Free Cruise Mode
 ✅ New Menu System for Customization
 ✅ Better Performance & Resolution Scaling
+
+
+V1.1 - Tested
+✅ Fix Cinematic Camera still being activated after ending Cinematic mode.
+✅ Removed OnFoot method - will add again in future once more testing has been done.
+✅ Added Phone contact to open menu.
+✅ Added a delay before the bars show and auto pilot begins.
+✅ Added Extra LemonMenu options, Speed and DrivingStyle. Something weird going on with the LemonMenu Item index, keeps resetting to 3 - Normal. Will look at this tomorrow.
+
+- TODO: Gears.asi support
+- TODO: LemonMenu fixes
