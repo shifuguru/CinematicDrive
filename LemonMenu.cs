@@ -15,6 +15,7 @@ namespace CinematicDrive
 
         private static readonly NativeCheckboxItem ModEnabledToggle = new NativeCheckboxItem("Mod Enabled: ", SettingsManager.ModEnabled);
         private static readonly NativeCheckboxItem DebugEnabledToggle = new NativeCheckboxItem("Debug Enabled:", SettingsManager.DebugEnabled);
+        private static readonly NativeCheckboxItem FirstTimeToggle = new NativeCheckboxItem("First Time: ", SettingsManager.FirstTime);
         private static readonly NativeDynamicItem<int> SpeedItem = new NativeDynamicItem<int>("Speed: ", "Sets the maximum Travel Speed", SettingsManager.Speed);
         private static readonly NativeDynamicItem<string> DrivingStyleItem = new NativeDynamicItem<string>("Driving Style: ", SettingsManager.GetDrivingStyleName());
 
@@ -34,8 +35,6 @@ namespace CinematicDrive
             "Rushed",
             "Sometimes Overtake Traffic"
         };
-
-        
 
         public LemonMenu()
         {
@@ -57,6 +56,8 @@ namespace CinematicDrive
             ModEnabledToggle.CheckboxChanged += ToggleMod;
             menu.Add(DebugEnabledToggle);
             DebugEnabledToggle.CheckboxChanged += ToggleDebug;
+            menu.Add(FirstTimeToggle);
+            FirstTimeToggle.CheckboxChanged += ToggleFirstTime;
 
             menu.Add(SpeedItem);
             SpeedItem.ItemChanged += ChangeDriveSpeed;
@@ -86,10 +87,16 @@ namespace CinematicDrive
             SettingsManager.Save();
         }
 
+        private static void ToggleFirstTime(object sender, EventArgs e)
+        {
+            SettingsManager.SetFirstTime(FirstTimeToggle.Checked);
+            Screen.ShowSubtitle($"First Time: {SettingsManager.FirstTime}", 1500);
+            SettingsManager.Save();
+        }
 
-        //* Come back to this once Lemon has explained how it works:
         private static void ChangeDriveSpeed(object sender, ItemChangedEventArgs<int> e)
         {
+            SpeedItem.SelectedItem = SettingsManager.Speed;
             int max = 250;
             int min = 0;
 
@@ -115,10 +122,8 @@ namespace CinematicDrive
             Screen.ShowSubtitle($"DEBUG: e.Object={e.Object}, SelectedItem={DrivingStyleItem.SelectedItem}, currentIndex={currentIndex}, newIndex={newIndex}", 2500);
 
             SettingsManager.SetDrivingStyleFromName(selectedStyle);
-            // Screen.ShowSubtitle($"Driving Style Set: Index: {newIndex} - {selectedStyle}", 1500);
-            SettingsManager.Save();
-
             DrivingStyleItem.SelectedItem = selectedStyle;
+            SettingsManager.Save();
         }
 
         public static void CreateMenu()

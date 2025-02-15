@@ -12,13 +12,12 @@ namespace CinematicDrive
 {
     public class Main : Script
     {
-        private bool firstTime = true;
         public const string ModName = "Cinematic Drive";
-        private const string Developer = "Shifuguru";
-        private const string Version = "1.1";
+        public const string Developer = "Shifuguru";
+        public const string Version = "1.2";
 
-        private CinematicBars cinematicBars;
-        private Stopwatch holdStopwatch = new Stopwatch();
+        private readonly CinematicBars cinematicBars;
+        private readonly Stopwatch holdStopwatch = new Stopwatch();
         private int pressedCounter;
         private Vector3 currentWaypoint;
         private bool waypointActive;
@@ -77,10 +76,10 @@ namespace CinematicDrive
             }
             #endregion
 
-            if (firstTime)
+            if (SettingsManager.FirstTime)
             {
                 Notification.Show($"{ModName} {Version} by {Developer} Loaded");
-                firstTime = false;
+                SettingsManager.SetFirstTime(false);
             }
 
             HandleCinematicMode();
@@ -209,24 +208,25 @@ namespace CinematicDrive
         private void StartCinematicMode()
         {
             // START:
+            cinematicBars.IncreaseY(2);
             Global.IsCinematicModeActive = true;
             Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
-            //cinematicBars.Show();
         }
 
 
         private void StopCinematicMode()
         {
             // STOP:
+            cinematicBars.DecreaseY(2);
             Global.IsCinematicModeActive = false;
             Global.IsCruising = false;
             Global.IsAutoDriving = false;
             Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
-            //cinematicBars.Hide();
             Game.Player.Character.Task.ClearAll();
         }
 
 
+        /* On Foot: 
         private void GoToWaypoint()
         {
             if (!Global.IsCinematicModeActive && waypointActive)
@@ -255,10 +255,11 @@ namespace CinematicDrive
             Global.IsCinematicModeActive = !Global.IsCinematicModeActive;
             Global.IsOnFoot = !Global.IsOnFoot;
         }
+        */
 
         private void DriveToWaypoint()
         {
-            if (Game.IsControlJustReleased(Control.VehicleExit))
+            if (Game.Player.Character.IsInVehicle() && Game.Player.Character.CurrentVehicle != null && Game.Player.Character.CurrentVehicle.Exists() || Game.IsControlJustReleased(Control.VehicleExit))
             {
                 if (SettingsManager.EndOnExitEnabled)
                 {
