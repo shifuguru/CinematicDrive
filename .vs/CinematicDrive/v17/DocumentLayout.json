@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:cinematicbars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -62,8 +62,7 @@
               "RelativeToolTip": "SettingsManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:28:34.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T05:28:34.066Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "CinematicBars.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:21:46.356Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T05:21:46.356Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "Global.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:32:34.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T05:32:34.692Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "Main.cs",
               "ViewState": "AgIAALcAAAAAAAAAAAAgwM8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:04:52.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T05:04:52.088Z"
             }
           ]
         }
