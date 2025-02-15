@@ -7,7 +7,7 @@
 ✅ Better Performance & Resolution Scaling
 
 
-V1.1 - Tested
+🆕 Version 1.1 Changelog
 ✅ Fix Cinematic Camera still being activated after ending Cinematic mode.
 ✅ Removed OnFoot method - will add again in future once more testing has been done.
 ✅ Added Phone contact to open menu.

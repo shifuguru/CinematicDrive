@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:lemonmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\cinematicbars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:cinematicbars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|f:\\gta5 scripts\\projects\\cinematicdrive\\ifruitaddon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\ifruitaddon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:ifruitaddon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|F:\\GTA5 scripts\\Projects\\CinematicDrive\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A581A5C8-EF84-4C92-97DD-8CB92556C433}|CinematicDrive.csproj|solutionrelative:global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,36 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 466,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main.cs",
-              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
-              "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
-              "RelativeToolTip": "Main.cs",
-              "ViewState": "AgIAAOYAAAAAAAAAAAAvwCABAACLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:04:52.088Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CinematicBars.cs",
-              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
-              "RelativeDocumentMoniker": "CinematicBars.cs",
-              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
-              "RelativeToolTip": "CinematicBars.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAvwCIAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:21:46.356Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -82,7 +54,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "SettingsManager.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
+              "RelativeDocumentMoniker": "SettingsManager.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
+              "RelativeToolTip": "SettingsManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:28:34.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LemonMenu.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
+              "RelativeDocumentMoniker": "LemonMenu.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
+              "RelativeToolTip": "LemonMenu.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T05:33:08.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "iFruitAddon.cs",
               "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\iFruitAddon.cs",
               "RelativeDocumentMoniker": "iFruitAddon.cs",
@@ -95,41 +93,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LemonMenu.cs",
-              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
-              "RelativeDocumentMoniker": "LemonMenu.cs",
-              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\LemonMenu.cs",
-              "RelativeToolTip": "LemonMenu.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAEwGcAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CinematicBars.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
+              "RelativeDocumentMoniker": "CinematicBars.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\CinematicBars.cs",
+              "RelativeToolTip": "CinematicBars.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAvwCIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:33:08.727Z",
+              "WhenOpened": "2025-02-13T05:21:46.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Global.cs",
               "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Global.cs",
               "RelativeDocumentMoniker": "Global.cs",
               "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Global.cs",
               "RelativeToolTip": "Global.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-13T05:32:34.692Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SettingsManager.cs",
-              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
-              "RelativeDocumentMoniker": "SettingsManager.cs",
-              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\SettingsManager.cs",
-              "RelativeToolTip": "SettingsManager.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAlwGkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Main.cs",
+              "DocumentMoniker": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "F:\\GTA5 scripts\\Projects\\CinematicDrive\\Main.cs",
+              "RelativeToolTip": "Main.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T05:28:34.066Z",
+              "WhenOpened": "2025-02-13T05:04:52.088Z",
               "EditorCaption": ""
             }
           ]

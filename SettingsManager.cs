@@ -9,7 +9,7 @@ namespace CinematicDrive
         public static bool DebugEnabled { get; private set; } = true; // Set to FALSE before Public Release!!!
         public static bool OnFootEnabled { get; private set; } = false; // Currently not implemented well.
         public static bool EndOnExitEnabled { get; private set; } = true; // End Cinematic on Vehicle Exit
-        public static int HoldDurationMs { get; private set; } = 3000;
+        public static int HoldDurationMs { get; private set; } = 2500;
         public static int Speed { get; private set; } = 20;
         public static DrivingStyle DrivingStyle { get; private set; } = DrivingStyle.Normal;
         public static Keys MenuKey { get; private set; } = Keys.F5;
