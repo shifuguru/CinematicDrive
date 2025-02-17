@@ -112,20 +112,20 @@ namespace CinematicDrive
         {
             int currentIndex = styles.IndexOf(DrivingStyleItem.SelectedItem);
 
-            if (currentIndex == -1) 
-                return;
+            if (currentIndex == -1) return;
 
             int increment = e.Direction == Direction.Left? -1 : 1;
-            int newIndex = (currentIndex + increment + styles.Count) % styles.Count;
+            int newIndex = (currentIndex + increment) % styles.Count;
             string selectedStyle = styles[newIndex];
 
             Screen.ShowSubtitle($"DEBUG: e.Object={e.Object}, SelectedItem={DrivingStyleItem.SelectedItem}, currentIndex={currentIndex}, newIndex={newIndex}", 2500);
 
+            e.Object = selectedStyle;
             SettingsManager.SetDrivingStyleFromName(selectedStyle);
-            DrivingStyleItem.SelectedItem = selectedStyle;
             SettingsManager.Save();
         }
-
+        
+        
         public static void CreateMenu()
         {
             var enableToggle = new NativeCheckboxItem("Mod Enabled:", SettingsManager.ModEnabled);
