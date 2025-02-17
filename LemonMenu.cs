@@ -17,7 +17,7 @@ namespace CinematicDrive
         private static readonly NativeCheckboxItem DebugEnabledToggle = new NativeCheckboxItem("Debug Enabled:", SettingsManager.DebugEnabled);
         private static readonly NativeCheckboxItem FirstTimeToggle = new NativeCheckboxItem("First Time: ", SettingsManager.FirstTime);
         private static readonly NativeDynamicItem<int> SpeedItem = new NativeDynamicItem<int>("Speed: ", "Sets the maximum Travel Speed", SettingsManager.Speed);
-        private static readonly NativeDynamicItem<string> DrivingStyleItem = new NativeDynamicItem<string>("Driving Style: ", SettingsManager.GetDrivingStyleName());
+        private static readonly NativeDynamicItem<string> DrivingStyleItem = new NativeDynamicItem<string>("Driving Style: ", "", SettingsManager.GetDrivingStyleName());
 
         public static List<object> airports = new List<object>()
         {
@@ -115,7 +115,7 @@ namespace CinematicDrive
             if (currentIndex == -1) return;
 
             int increment = e.Direction == Direction.Left? -1 : 1;
-            int newIndex = (currentIndex + increment) % styles.Count;
+            int newIndex = (currentIndex + increment + styles.Count) % styles.Count;
             string selectedStyle = styles[newIndex];
 
             Screen.ShowSubtitle($"DEBUG: e.Object={e.Object}, SelectedItem={DrivingStyleItem.SelectedItem}, currentIndex={currentIndex}, newIndex={newIndex}", 2500);

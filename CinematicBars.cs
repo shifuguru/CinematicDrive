@@ -27,21 +27,6 @@ namespace CinematicDrive
             }
         }
 
-        public void Show()
-        {
-            IncreaseY(2);
-            Global.IsCinematicModeActive = true;
-            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
-        }
-
-        public void Hide()
-        {
-            DecreaseY(2);
-            Global.IsCinematicModeActive = false;
-            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
-        }
-
-
         public void IncreaseY(int i)
         {
             if ((double)cinematicBars[0].Position.Y >= 0.0)

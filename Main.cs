@@ -88,6 +88,11 @@ namespace CinematicDrive
 
         private void HandleCinematicMode()
         {
+            if (!SettingsManager.ModEnabled || Global.IsCinematicModeActive && Game.Player.Character.CurrentVehicle == null && !Game.Player.Character.IsInVehicle())
+            {
+                StopCinematicMode();
+                return;
+            }
             if (Global.ForceCinCam)
                 Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
             if (Global.IsCinematicModeActive && Game.IsControlPressed(Control.NextCamera))
