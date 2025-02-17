@@ -1,4 +1,5 @@
 ﻿using GTA;
+using GTA.Native;
 using GTA.UI;
 using System.Drawing;
 
@@ -25,6 +26,21 @@ namespace CinematicDrive
                 cinematicBars[1] = new ContainerElement(new PointF(0.0f, 612f), new SizeF(1280f, 108f), Color.Black);
             }
         }
+
+        public void Show()
+        {
+            IncreaseY(2);
+            Global.IsCinematicModeActive = true;
+            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
+        }
+
+        public void Hide()
+        {
+            DecreaseY(2);
+            Global.IsCinematicModeActive = false;
+            Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+        }
+
 
         public void IncreaseY(int i)
         {
