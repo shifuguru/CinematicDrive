@@ -1,3 +1,11 @@
+🆕 Version 1.2.1 Changelog
+✅ Added early ModEnabled check to end cinematic mode if you disable the mod
+✅ Additional fix for Driving Style unhandled exception.
+
+- TODO: Gears.asi support
+- TODO: Stop Cinematic Mode after ending Cinematic Mode
+
+
 🆕 Version 1.2 Changelog
 ✅ Fix for setting Driving Styles in-menu. You can now correctly change the Driving Style in the Menu.
 ✅ Minor fixes

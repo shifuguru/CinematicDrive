@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.IO.Pipes;
+using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using GTA;
@@ -14,7 +17,7 @@ namespace CinematicDrive
     {
         public const string ModName = "Cinematic Drive";
         public const string Developer = "Shifuguru";
-        public const string Version = "1.2";
+        public const string Version = "1.3";
 
         private readonly CinematicBars cinematicBars;
         private readonly Stopwatch holdStopwatch = new Stopwatch();
@@ -101,7 +104,7 @@ namespace CinematicDrive
                 ++pressedCounter;
 
             // VEHICLE CIN CAM BUTTON PRESSED:
-            if (Game.IsControlPressed(Control.VehicleCinCam))
+            if (Game.IsControlPressed(Control.VehicleCinCam) && Game.Player.Character.IsInVehicle())
             {
                 if (!Global.IsCinematicModeActive)
                     Global.CinematicDriveActive = false;
@@ -146,7 +149,7 @@ namespace CinematicDrive
             }
 
             // VEHICLE CIN CAM BUTTON RELEASED:
-            if (Game.IsControlJustReleased(Control.VehicleCinCam))
+            if (Game.IsControlJustReleased(Control.VehicleCinCam) && Game.Player.Character.IsInVehicle())
             {
                 if (holdStopwatch.ElapsedMilliseconds < 1000L)
                 {
@@ -165,6 +168,12 @@ namespace CinematicDrive
                 Global.ForceCinCam = Global.IsCinematicModeActive;
                 Global.SameHold = false;
                 pressedCounter = 0;
+
+                if (!Global.IsCinematicModeActive)
+                {
+                    Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, false);
+                    Global.CinematicDriveActive = false;
+                }
             }
 
             // MENU TOGGLE:
@@ -209,10 +218,8 @@ namespace CinematicDrive
             }
         }
 
-
         private void StartCinematicMode()
         {
-            // START:
             cinematicBars.IncreaseY(2);
             Global.IsCinematicModeActive = true;
             Function.Call(Hash.SET_CINEMATIC_MODE_ACTIVE, true);
@@ -221,7 +228,6 @@ namespace CinematicDrive
 
         private void StopCinematicMode()
         {
-            // STOP:
             cinematicBars.DecreaseY(2);
             Global.IsCinematicModeActive = false;
             Global.IsCruising = false;
@@ -327,7 +333,7 @@ namespace CinematicDrive
 
         private void OnAborted(object sender, EventArgs e)
         {
-            // StopCinematicMode();
+            StopCinematicMode();
         }
     }
 }
